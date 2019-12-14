@@ -1,0 +1,57 @@
+﻿@model List<MvcShopping.Models.ProductCategory>
+
+<div id="left">
+<h2>商品类别</h2>
+<ul id="productcategory">
+    @foreach (var item in Model)
+    {
+        <li>@Html.ActionLink(item.Name,"ProductList",new{
+           id=item.Id})
+        </li>
+    }
+</ul>
+</div>
+<div id="right">
+@*热门商品*@
+<h3></h3>
+<ul>
+    <li>
+        <a href=@Url.Action("ProductDetail", new {id=6 })>
+        <img alt="#" src="~/images/bijiben/Dell XPS13-5608.jpg"/>
+        <p>戴尔 XPS13-5608</p>
+        </a>
+     </li>
+    <li>
+        <a href=@Url.Action("ProductDetail", new {id=10 })>
+        <img alt="#" src="~/images/pinban/Aigo PAD707.jpg"/>
+        <p>爱国者 PAD707</p>
+        </a>
+     </li>
+    <li>
+        <a href=@Url.Action("ProductDetail", new {id=18 })>
+        <img alt="#" src="~/images/xiangji/Aigo F360.jpg"/>
+        <p>爱国者 F360</p>
+        </a>
+     </li>
+    <li>
+        <a href=@Url.Action("ProductDetail", new {id=22 })>
+        <img alt="#" src="~/images/shouji/Acer AK330s.jpg"/>
+        <p>宏基 AK330s</p>
+        </a>
+     </li>
+    <li>
+        <a href=@Url.Action("ProductDetail", new {id=26 })>
+        <img alt="#" src="~/images/mp4/Aigo U228.jpg"/>
+        <p>爱国者 U228</p>
+        </a>
+     </li>
+    <li>
+        <a href=@Url.Action("ProductDetail", new {id=34 })>
+        <img alt="#" src="~/images/yinxiang/Edifier C2X.jpg"/>
+        <p>漫步者 C2X</p>
+        </a>
+     </li>
+
+</ul>
+
+</div>

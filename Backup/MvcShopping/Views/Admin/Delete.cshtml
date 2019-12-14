@@ -1,0 +1,53 @@
+﻿@model MvcShopping.Models.Product
+
+@{
+    ViewBag.Title = "删除商品";
+}
+
+<h3>删除商品</h3>
+
+<h3>确认要删除商品“@Model.Name”吗？</h3>
+<fieldset>
+    <legend>商品“@Model.Name”信息</legend>
+    
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Color)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Color)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Price)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PublishOn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PublishOn)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="删除" /> |
+        @Html.ActionLink("返回", "Index")
+    </p>
+}

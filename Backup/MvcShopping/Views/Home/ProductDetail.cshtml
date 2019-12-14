@@ -1,0 +1,52 @@
+﻿@model MvcShopping.Models.Product
+@{
+    var ajaxOption = new AjaxOptions()
+    {
+        OnSuccess = "AddToCartSuccess",
+        OnFailure = "AddToCartFailure",
+        HttpMethod = "Post"
+    };
+}
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        function AddToCartSuccess() {
+            alert('添加购物车成功！');
+        }
+        function AddToCartFailure(xhr) {
+            alert('添加购物车失败(HTTP状态码：' +
+                xhr.status + ')');
+        }
+    </script>
+}
+<div id="productdetail">
+    <h3>你正在查看"@Model.Name"商品</h3>
+<img alt="" src="~/images/other/topbar.gif" style="width:900px;"/>
+<fieldset style="margin-top:10px">
+    <legend>@Html.DisplayNameFor(m=>m)</legend>
+    <img alt="" src="@Model.Url"  style="float:left;width:180px;height:180px;"/>
+    <div style="float:left;margin:30px">
+    <div class="display-label">
+        @Html.DisplayNameFor(model=>model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model=>model.Description)
+    </div>
+     <div class="display-label">
+        @Html.DisplayNameFor(model=>model.Price)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model=>model.Price)
+    </div>
+     <div class="display-label">
+        @Html.DisplayNameFor(model=>model.PublishOn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model=>model.PublishOn)
+    </div>
+    </div>
+</fieldset>
+</div>
+<p style="float:right;">
+    @Ajax.ActionLink("添加购物车","AddToCart","Cart",ajaxOption)
+</p>

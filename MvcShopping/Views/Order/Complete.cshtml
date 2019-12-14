@@ -1,0 +1,55 @@
+﻿@model MvcShopping.Models.OrderHeader
+
+<h3>结帐</h3>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>请输入递送信息与订单备注</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContactName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContactName)
+            @Html.ValidationMessageFor(model => model.ContactName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContractPhoneNo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContractPhoneNo)
+            @Html.ValidationMessageFor(model => model.ContractPhoneNo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContactAddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContactAddress)
+            @Html.ValidationMessageFor(model => model.ContactAddress)
+        </div>        
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Memo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Memo)
+            @Html.ValidationMessageFor(model => model.Memo)
+        </div>       
+
+        <p>
+            <input type="submit" value="完成订单" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("回首页", "Index","Home")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

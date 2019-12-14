@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7E591B04-5914-4624-94D1-26E515FE5FE5}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvcShopping</RootNamespace>
+    <AssemblyName>MvcShopping</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\MemberLoginViewModel.cs" />
+    <Compile Include="Models\MvcShoppingContext.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\OrderHeader.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductCategory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="images\bijiben\Dell XPS13-5608.jpg" />
+    <Content Include="images\bijiben\Hasee UI41 D2.jpg" />
+    <Content Include="images\bijiben\HP 430 G1.png" />
+    <Content Include="images\bijiben\Snoy SVF14314SC.jpg" />
+    <Content Include="images\mp3\Apple MD778CHA.jpg" />
+    <Content Include="images\mp3\ONN V1.jpg" />
+    <Content Include="images\mp3\PHILIPS SA4CLP02PN.jpg" />
+    <Content Include="images\mp3\Soaiy SA-650.jpg" />
+    <Content Include="images\mp4\Aigo U228.jpg" />
+    <Content Include="images\mp4\Colorfly CK5.jpg" />
+    <Content Include="images\mp4\Onda VX530LE.jpg" />
+    <Content Include="images\mp4\Soaiy V36.jpg" />
+    <Content Include="images\other\1.gif" />
+    <Content Include="images\other\1.jpg" />
+    <Content Include="images\other\2.jpg" />
+    <Content Include="images\other\200.jpg" />
+    <Content Include="images\other\Admin0.gif" />
+    <Content Include="images\other\AjaxMenuBg.gif" />
+    <Content Include="images\other\an_bg.gif" />
+    <Content Include="images\other\an_bg2.gif" />
+    <Content Include="images\other\arrow.gif" />
+    <Content Include="images\other\back2.jpg" />
+    <Content Include="images\other\banner.jpg" />
+    <Content Include="images\other\bdr-nav.gif" />
+    <Content Include="images\other\bg-sbt2.jpg" />
+    <Content Include="images\other\bg-shd.png" />
+    <Content Include="images\other\bg-tab1-off.png" />
+    <Content Include="images\other\bg_1.gif" />
+    <Content Include="images\other\boxL.jpg" />
+    <Content Include="images\other\boxR.jpg" />
+    <Content Include="images\other\btn-addcart.png" />
+    <Content Include="images\other\btn-carton.gif" />
+    <Content Include="images\other\btn-confirm.jpg" />
+    <Content Include="images\other\btn-get.gif" />
+    <Content Include="images\other\btn-login.png" />
+    <Content Include="images\other\btn-sub.gif" />
+    <Content Include="images\other\btn-total.gif" />
+    <Content Include="images\other\buttom-copy-bg.gif" />
+    <Content Include="images\other\buttom-left.gif" />
+    <Content Include="images\other\buy.gif" />
+    <Content Include="images\other\car.gif" />
+    <Content Include="images\other\cart.jpg" />
+    <Content Include="images\other\cart01.gif" />
+    <Content Include="images\other\cart02.gif" />
+    <Content Include="images\other\cart03.gif" />
+    <Content Include="images\other\cart04.gif" />
+    <Content Include="images\other\cas_07.jpg" />
+    <Content Include="images\other\center.gif" />
+    <Content Include="images\other\conter-6.gif" />
+    <Content Include="images\other\conter-9.gif" />
+    <Content Include="images\other\d1.gif" />
+    <Content Include="images\other\d2.gif" />
+    <Content Include="images\other\d3.gif" />
+    <Content Include="images\other\GSHOP.jpg" />
+    <Content Include="images\other\gwc_26.gif" />
+    <Content Include="images\other\headerbg.jpg" />
+    <Content Include="images\other\hot_icon.gif" />
+    <Content Include="images\other\img-3.gif" />
+    <Content Include="images\other\img-4.gif" />
+    <Content Include="images\other\img-5.gif" />
+    <Content Include="images\other\img-6.gif" />
+    <Content Include="images\other\input-name.jpg" />
+    <Content Include="images\other\left-4.gif" />
+    <Content Include="images\other\loading.gif" />
+    <Content Include="images\other\login1.gif" />
+    <Content Include="images\other\login2.gif" />
+    <Content Include="images\other\login_04.gif" />
+    <Content Include="images\other\login_4.jpg" />
+    <Content Include="images\other\logo.gif" />
+    <Content Include="images\other\logo.png" />
+    <Content Include="images\other\menu-top-2.jpg" />
+    <Content Include="images\other\menu-top.jpg" />
+    <Content Include="images\other\menubg.gif" />
+    <Content Include="images\other\menu_01.gif" />
+    <Content Include="images\other\menu_02.gif" />
+    <Content Include="images\other\menu_03.gif" />
+    <Content Include="images\other\menu_04.gif" />
+    <Content Include="images\other\menu_05.gif" />
+    <Content Include="images\other\menu_06.gif" />
+    <Content Include="images\other\menu_15.gif" />
+    <Content Include="images\other\menu_bg1_1.gif" />
+    <Content Include="images\other\menu_bg1_2.gif" />
+    <Content Include="images\other\menu_bg2_1.gif" />
+    <Content Include="images\other\menu_bg2_2.gif" />
+    <Content Include="images\other\menu_bg3_1.gif" />
+    <Content Include="images\other\menu_bg3_2.gif" />
+    <Content Include="images\other\navigation.jpg" />
+    <Content Include="images\other\Ok_2.jpg" />
+    <Content Include="images\other\pay.gif" />
+    <Content Include="images\other\paybg2.jpg" />
+    <Content Include="images\other\pic19.gif" />
+    <Content Include="images\other\pic_bg0.gif" />
+    <Content Include="images\other\pic_bg1.gif" />
+    <Content Include="images\other\pic_bg2.gif" />
+    <Content Include="images\other\pic_bg3.gif" />
+    <Content Include="images\other\pic_bg4.gif" />
+    <Content Include="images\other\pic_bg_big0.gif" />
+    <Content Include="images\other\pic_bg_big1.gif" />
+    <Content Include="images\other\pic_bg_big2.gif" />
+    <Content Include="images\other\pic_bg_big3.gif" />
+    <Content Include="images\other\pic_bg_big4.gif" />
+    <Content Include="images\other\recommand_1.gif" />
+    <Content Include="images\other\root.png" />
+    <Content Include="images\other\root2.png" />
+    <Content Include="images\other\sale.gif" />
+    <Content Include="images\other\shishang1.jpg" />
+    <Content Include="images\other\shishang2.jpg" />
+    <Content Include="images\other\shishang3.jpg" />
+    <Content Include="images\other\shishang4.jpg" />
+    <Content Include="images\other\shishang5.jpg" />
+    <Content Include="images\other\submit.jpg" />
+    <Content Include="images\other\tab-1.gif" />
+    <Content Include="images\other\tab-2.gif" />
+    <Content Include="images\other\tbg1.jpg" />
+    <Content Include="images\other\title.gif" />
+    <Content Include="images\other\topbanner.jpg" />
+    <Content Include="images\other\topbar.gif" />
+    <Content Include="images\other\topgg.gif" />
+    <Content Include="images\other\trans_menu03.gif" />
+    <Content Include="images\other\watermark_best.png" />
+    <Content Include="images\other\watermark_best_small.gif" />
+    <Content Include="images\other\watermark_hot.png" />
+    <Content Include="images\other\watermark_hot_small.gif" />
+    <Content Include="images\other\watermark_new.png" />
+    <Content Include="images\other\watermark_new_small.gif" />
+    <Content Include="images\other\watermark_promote.png" />
+    <Content Include="images\other\watermark_promote_small.gif" />
+    <Content Include="images\other\ywt.gif" />
+    <Content Include="images\other\z1.jpg" />
+    <Content Include="images\other\z2.jpg" />
+    <Content Include="images\other\z3.jpg" />
+    <Content Include="images\other\z4.jpg" />
+    <Content Include="images\other\zhuce.gif" />
+    <Content Include="images\other\zhuce.jpg" />
+    <Content Include="images\other\zhuce2.gif" />
+    <Content Include="images\other\书.jpg" />
+    <Content Include="images\other\交易条款.jpg" />
+    <Content Include="images\other\化妆品.jpg" />
+    <Content Include="images\other\名字空白.JPG" />
+    <Content Include="images\other\后台入口条.jpg" />
+    <Content Include="images\other\左侧导航背景.jpg" />
+    <Content Include="images\other\左右两侧背景.jpg" />
+    <Content Include="images\other\影视音乐.jpg" />
+    <Content Include="images\other\数码摄影.jpg" />
+    <Content Include="images\other\日用家具.jpg" />
+    <Content Include="images\other\时尚礼品.jpg" />
+    <Content Include="images\other\最底部.jpg" />
+    <Content Include="images\other\服装服饰.jpg" />
+    <Content Include="images\other\热销商品.jpg" />
+    <Content Include="images\other\特价商品.jpg" />
+    <Content Include="images\other\电脑软件.jpg" />
+    <Content Include="images\other\精品推荐.jpg" />
+    <Content Include="images\other\精品推荐下面部分.jpg" />
+    <Content Include="images\other\结款方式.jpg" />
+    <Content Include="images\other\网上商城购物系统后台登录页面.jpg" />
+    <Content Include="images\other\退换货原则.jpg" />
+    <Content Include="images\other\配送范围.jpg" />
+    <Content Include="images\other\鲜花绿植.jpg" />
+    <Content Include="images\pinban\Aigo PAD707.jpg" />
+    <Content Include="images\pinban\Colorfly E708 Q1.jpg" />
+    <Content Include="images\pinban\Onda V819 3G.jpg" />
+    <Content Include="images\pinban\Ramos w21.jpg" />
+    <Content Include="images\shouji\Acer AK330s.jpg" />
+    <Content Include="images\shouji\HTC A620D.jpg" />
+    <Content Include="images\shouji\Huawei G520.jpg" />
+    <Content Include="images\shouji\iphone 5s.jpg" />
+    <Content Include="images\taishiji\Acer SQN6120.jpg" />
+    <Content Include="images\taishiji\ASUS CM6730-C42C.jpg" />
+    <Content Include="images\taishiji\DELL I2020-R338.jpg" />
+    <Content Include="images\taishiji\HP 400-010cx.jpg" />
+    <Content Include="images\xiangji\Aigo F360.jpg" />
+    <Content Include="images\xiangji\Canon IXUS 240 HS.jpg" />
+    <Content Include="images\xiangji\Samsung ES99.jpg" />
+    <Content Include="images\xiangji\Sony WX300.jpg" />
+    <Content Include="images\yinxiang\Edifier C2X.jpg" />
+    <Content Include="images\yinxiang\Edifier e1100MKII.jpg" />
+    <Content Include="images\yinxiang\Hyundai F240.jpg" />
+    <Content Include="images\yinxiang\Microlab M-200.jpg" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\ProductList.cshtml" />
+    <Content Include="Views\Home\ProductDetail.cshtml" />
+    <Content Include="Views\Member\Register.cshtml" />
+    <Content Include="Views\Member\Login.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Order\Complete.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Add.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Admin\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="images\other\产品图片\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1342/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

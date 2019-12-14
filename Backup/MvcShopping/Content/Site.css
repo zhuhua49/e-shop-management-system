@@ -1,0 +1,170 @@
+﻿body {
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color:#fee;
+    margin:0;
+    padding:0;
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+li {
+    list-style:none;
+}
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/*-----------------_Layout------------------*/
+body {
+    width:900px;
+    height:855px;
+    margin:0px auto;
+    background:#c0ced5;
+}
+#header {
+    height:160px;
+    background:url("../images/other/back2.jpg");
+}
+#nav  ul{
+    margin-top:0px;
+    height:22px;
+    background:#ddd;
+}
+    #nav ul li {
+        display:inline;
+        height:22px;
+        line-height:22px;
+        text-align:center;
+        margin:0 7px;
+    }
+#content {
+    min-height:444px;
+}
+#footer {
+    clear:both;
+    text-align:center;
+    background:#ddd;
+}
+
+/*------------------------------------------*/
+
+
+/*-----------------home index-------------------*/
+h2 {
+    text-indent:-999px;
+    margin-left:20px;
+}
+#content #left {
+    margin-top:0px;
+    width:220px;
+    float:left;
+    min-height:549px;
+    background:url("../images/other/左侧导航背景.jpg")
+}
+#left ul li {
+    width:80px;
+    height:33px;
+    margin-left:30px;
+    background:url("../images/other/menu_bg2_1.jpg");
+    line-height:33px;
+    font-size:16px;
+}
+#content #right {
+    width:680px;
+    float:left;
+    min-height:549px;
+    background:#eee;
+}
+#content #right h3 {
+    background:url("../images/other/热销商品.jpg") no-repeat;
+    height:20px;
+    text-indent:-999px;
+}
+    #content #right ul li {
+        width:180px;
+        height:200px;
+        margin:10px 10px;
+        float:left;
+    }
+    #content #right ul li img{
+        width:180px;
+        height:180px;
+    }
+    #content #right ul li p{
+        width:180px;
+        height:20px;
+        text-align:center;
+    }
+/*----------------------------------------------*/
+
+
+/*----------------home productlist--------------*/
+#content #productlist {
+    background:#c3d8d8;
+    margin:0px;
+    padding:0px;
+}
+
+#content table th {
+    width:180px;
+}
+
+#content table td {
+    width:180px;
+    text-align:center;
+}
+    #content table td img {
+        height:100px;
+    }
+/*----------------------------------------------*/

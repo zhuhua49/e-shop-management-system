@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MvcShopping.Models.Product>
+@{
+    var ajaxOption = new AjaxOptions()
+    {
+        OnSuccess = "AddToCartSuccess",
+        OnFailure = "AddToCartFailure",
+        HttpMethod = "Post"
+    };
+}
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        function AddToCartSuccess() {
+            alert('加入购物车成功');
+        }
+        function AddToCartFailure(xhr) {
+            alert('加入购物车失败 (HTTP 状态码: ' + xhr.status + ')');
+        }
+    </script>
+}
+<div id="productlist">
+<h3>@Html.DisplayNameFor(model => model.ToList()[0])</h3>
+
+<h3>你正在查看【@Model.First().productCategory.Name】分类的商品：</h3>
+
+<table>
+    <tr><th> </th>
+        <th>@Html.DisplayNameFor(model => model.Name)</th>
+        <th>@Html.DisplayNameFor(model => model.Description)</th>
+        <th>@Html.DisplayNameFor(model => model.Price)</th>
+        <th>购买</th>
+    </tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td><img alt="" src="@item.Url" /></td>
+        <td>@Html.ActionLink(item.Name, "ProductDetail", new { id = item.Id })</td>
+        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+        <td>@Html.DisplayFor(modelItem => item.Price)</td>
+        <td>@Ajax.ActionLink("购买", "AddToCart", "Cart", new { ProductId = item.Id }, ajaxOption)</td>
+    </tr>
+}
+</table>
+
+</div>

@@ -1,0 +1,71 @@
+﻿@model List<MvcShopping.Models.Cart>
+@{
+    var ajaxOption = new AjaxOptions() {
+        OnSuccess = "RemoveCartSuccess",
+        OnFailure = "RemoveCartFailure",
+        Confirm = "你确定要从购物车中删除这个商品吗？",
+        HttpMethod = "Post"
+    };
+}
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        function RemoveCartSuccess() {
+            alert('移除购物车商品成功');
+            location.reload();
+        }
+        function RemoveCartFailure(xhr) {
+            alert('移除购物车商品失败 (HTTP 状态码: ' + xhr.status + ')');
+        }
+    </script>
+}
+<h3>购物车清单</h3>
+
+@using (Html.BeginForm("UpdateAmount", "Cart"))
+{
+    <table>
+        <tr>
+            <th> </th>
+            <th>商品名称</th>
+            <th>单价</th>
+            <th>数量</th>
+            <th>小计</th>
+            <th></th>
+        </tr>
+    @{ int subTotal = 0; }
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        // 计算购买商品总价
+        subTotal += Model[i].product.Price * Model[i].Amount;
+        
+        // 选择商品数量，只能选择 1 ~ 10
+        var ddlAmountList = new SelectList(Enumerable.Range(1, 10), Model[i].Amount);
+        
+        @Html.HiddenFor(modelItem => Model[i].product.Id)
+
+        <tr>
+            <td><img alt="" src="@Model[i].product.Url" /></td>
+            <td>@Html.DisplayFor(modelItem => Model[i].product.Name)</td>
+            <td>NT$ @(Model[i].product.Price)</td>
+            <td>@Html.DropDownListFor(modelItem => Model[i].Amount, ddlAmountList)</td>
+            <td>NT$ @(Model[i].product.Price * Model[i].Amount)</td>
+            <td>
+                @Ajax.ActionLink("删除", "Remove", new { ProductId=Model[i].product.Id }, ajaxOption)
+            </td>
+        </tr>
+    }
+        <tr>
+            <th></th>
+            <th></th>
+            <th>总价</th>
+            <th id="subtotal">NT$ @subTotal</th>
+            <th></th>
+        </tr>
+    </table>
+    <p style="float:right;margin:30px 30px">
+        <input type="submit" value="更新数量" />
+
+        <input type="button" value="完成订单" 
+            onclick="location.href = '@Url.Action("Complete", "Order") ';" />
+    </p>
+}

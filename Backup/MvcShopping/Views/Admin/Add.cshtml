@@ -1,0 +1,72 @@
+﻿@model MvcShopping.Models.Product
+
+@{
+    ViewBag.Title = "添加商品";
+}
+
+<h3>添加商品</h3>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+   
+    <fieldset>
+        <legend>商品信息</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.productCategory)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Id",String.Empty)
+            @Html.ValidationMessageFor(model => model.productCategory.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Color)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Color)
+            @Html.ValidationMessageFor(model => model.Color)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Price)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Price)
+            @Html.ValidationMessageFor(model => model.Price)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Url)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Url)
+            @Html.ValidationMessageFor(model => model.Url)
+        </div>
+        <p>
+            <input type="submit" value="添加" />
+        </p>
+    </fieldset>
+}
+
+<div style="float:right;margin:10px 20px;">
+    @Html.ActionLink("返回", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
